@@ -1,6 +1,8 @@
 package com.example.practiceandroidstudio
 
+import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -15,6 +17,18 @@ class MainActivity : AppCompatActivity() {
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
+        }
+
+        // Обробка кліку для першої кнопки (FirstActivity)
+        findViewById<Button>(R.id.button_first).setOnClickListener {
+            val intent = Intent(this, Activity2::class.java)
+            startActivity(intent)
+        }
+
+        // Обробка кліку для другої кнопки (SecondActivity)
+        findViewById<Button>(R.id.button_second).setOnClickListener {
+            val intent = Intent(this, Activity3::class.java)
+            startActivity(intent)
         }
     }
 }
