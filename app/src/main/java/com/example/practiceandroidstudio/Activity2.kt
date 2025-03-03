@@ -9,6 +9,7 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import com.example.practiceandroidstudio.databinding.Activity2Binding
+import android.app.Activity
 import android.widget.Button
 
 class Activity2 : AppCompatActivity() {
@@ -36,6 +37,13 @@ class Activity2 : AppCompatActivity() {
             startActivity(intent)
             finish()  // Завершуємо Activity2, щоб не зберігати його в стеку
         }
+        // Для Activity2
+        findViewById<Button>(R.id.button_back).setOnClickListener {
+            val resultIntent = Intent().apply { putExtra("screen", "Activity2") }
+            setResult(Activity.RESULT_OK, resultIntent)
+            finish()
+        }
+
     }
 
     override fun onSupportNavigateUp(): Boolean {
