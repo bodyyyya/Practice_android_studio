@@ -18,14 +18,43 @@
             app:title="Activity 2" />
     </com.google.android.material.appbar.AppBarLayout>
 
-    <!-- Контейнер для фрагментів або іншого вмісту -->
-    <FrameLayout
-        android:id="@+id/nav_host_fragment_content_2"
+    <!-- Основний вміст -->
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-    <!-- Кнопка для повернення на головну активність -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- ImageView для відображення фото -->
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:scaleType="centerCrop"
+                android:contentDescription="@string/image_desc"
+                android:src="@android:drawable/ic_menu_gallery" />
+
+            <!-- Кнопка для галереї -->
+            <Button
+                android:id="@+id/button_gallery"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Вибрати з галереї" />
+
+            <!-- Якщо потрібен контейнер для фрагментів, можна залишити його тут -->
+            <FrameLayout
+                android:id="@+id/nav_host_fragment_content_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Кнопка для повернення на головну активність (розташована поверх) -->
     <Button
         android:id="@+id/button_back"
         android:layout_width="wrap_content"
@@ -34,7 +63,6 @@
         android:layout_gravity="center_horizontal|top"
         android:layout_marginTop="80dp" />
 
-    <!-- FloatingActionButton (якщо потрібен) -->
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"
         android:layout_width="wrap_content"
