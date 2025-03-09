@@ -48,4 +48,24 @@
         android:id="@+id/fragment3"
         android:name="com.example.practiceandroidstudio.Fragment3"
         android:label="Fragment3" />
+
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="com.example.practiceandroidstudio.ProfileFragment"
+        android:label="Profile" />
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.practiceandroidstudio.HomeFragment"
+        android:label="Home" />
+
+    <fragment
+        android:id="@+id/listFragment"
+        android:name="com.example.practiceandroidstudio.ListFragment"
+        android:label="List" />
+
+    <fragment
+        android:id="@+id/mysteryFragment"
+        android:name="com.example.practiceandroidstudio.MysteryFragment"
+        android:label="Mystery" />
 </navigation>
